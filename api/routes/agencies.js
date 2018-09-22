@@ -70,39 +70,39 @@ router.get("/:agencyId", (req, res, next) => {
     });
 });
 
-// router.patch("/:agencyId", (req, res, next) => {
-//   const id = req.params.productId;
-//   const updateOps = {};
-//   for (const ops of req.body) {
-//     updateOps[ops.propName] = ops.value;
-//   }
-//   Agency.update({ _id: id }, { $set: updateOps })
-//     .exec()
-//     .then(result => {
-//       console.log(result);
-//       res.status(200).json(result);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json({
-//         error: err
-//       });
-//     });
-// });
+router.patch("/:agencyId", (req, res, next) => {
+  const id = req.params.productId;
+  const updateOps = {};
+  for (const ops of req.body) {
+    updateOps[ops.propName] = ops.value;
+  }
+  Agency.update({ _id: id }, { $set: updateOps })
+    .exec()
+    .then(result => {
+      console.log(result);
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
+});
 
-// router.delete("/:agencyId", (req, res, next) => {
-//   const id = req.params.productId;
-//   Product.remove({ _id: id })
-//     .exec()
-//     .then(result => {
-//       res.status(200).json(result);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//       res.status(500).json({
-//         error: err
-//       });
-//     });
-// });
+router.delete("/:agencyId", (req, res, next) => {
+  const id = req.params.productId;
+  Product.remove({ _id: id })
+    .exec()
+    .then(result => {
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
+});
 
 module.exports = router;

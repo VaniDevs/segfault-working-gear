@@ -2,11 +2,12 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const agencySchema = new Schema({
-    name: String,
-    email: String,
+    _id: mongoose.Schema.Types.ObjectId,
+    name: {type: String, required:true},
+    email: {type: String, required: true, unique: true},
     address: String,
-    telephone: String,
-    password: String
+    telephone: {type: String,required: true},
+    password: {type: String,required: true}
 });
 
 module.exports = mongoose.model('Agency', agencySchema);
