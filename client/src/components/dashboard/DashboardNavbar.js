@@ -26,8 +26,8 @@ export default class DashboardNavbar extends Component {
               <MenuItem
                 eventKey={2.1}
                 componentClass={Link}
-                href="/make-an-appointment"
-                to="/make-an-appointment"
+                href="/make-appointments"
+                to="/make-appointments"
               >
                 Make an appointment
               </MenuItem>
