@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
+import PrivateRoute from './components/common/PrivateRoute';
 import Home from './components/layout/Home';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
+import Panel from './components/dashboard/Panel';
 
 class App extends Component {
   render() {
@@ -17,6 +19,9 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/sign-up" component={Signup} />
+          <Switch>
+            <Route path="/dashboard" component={Panel} />
+          </Switch>
         </div>
       </Router>
     );
