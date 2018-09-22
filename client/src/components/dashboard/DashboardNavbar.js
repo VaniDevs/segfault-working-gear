@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 export default class DashboardNavbar extends Component {
@@ -22,22 +22,24 @@ export default class DashboardNavbar extends Component {
             >
               Dashboard
             </NavItem>
-            <NavItem
-              eventKey={2}
-              componentClass={Link}
-              href="/make-appointments"
-              to="/make-appointments"
-            >
-              Make Appointments
-            </NavItem>
-            <NavItem
-              eventKey={3}
-              componentClass={Link}
-              href="/show-appointments"
-              to="/show-appointments"
-            >
-              Show Appointments
-            </NavItem>
+            <NavDropdown eventKey={2} title="Manage Appointments">
+              <MenuItem
+                eventKey={2.1}
+                componentClass={Link}
+                href="/make-an-appointment"
+                to="/make-an-appointment"
+              >
+                Make an appointment
+              </MenuItem>
+              <MenuItem
+                eventKey={2.2}
+                componentClass={Link}
+                href="/show-appointments"
+                to="/show-appointments"
+              >
+                Show appointments
+              </MenuItem>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
