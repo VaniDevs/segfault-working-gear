@@ -6,12 +6,10 @@ import Login from './components/auth/Login';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="App">
         <link
-          rel={'stylesheet'}
-          href={
-            'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
-          }
+          rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         />
         <Login />
       </div>
